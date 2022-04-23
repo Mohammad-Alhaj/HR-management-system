@@ -30,34 +30,44 @@ info.push(this);
 
 
 
-//  Employee.prototype.salaryy=function(){
-//       if (this.level=="Senior") {
+ Employee.prototype.salaryy=function(){
+      if (this.level=="Senior") {
 
-//           return (Math.floor(Math.random() * (2000 - 1500 + 1) ) + 1500)*0.925;
+          return (Math.floor(Math.random() * (2000 - 1500 + 1) ) + 1500)*0.925;
       
-//       }
-//       else if (this.level=="MidSenior") {
-//         return (Math.floor(Math.random() * (1500 - 1000 + 1) ) + 1000)*0.925;
+      }
+      else if (this.level=="MidSenior") {
+        return (Math.floor(Math.random() * (1500 - 1000 + 1) ) + 1000)*0.925;
 
-//       }else if (this.level=="Junior"); {
-//         return (Math.floor(Math.random() * (1000 - 500 + 1) ) + 500)*0.925;
-//       }
-//  }
+      }else if (this.level=="Junior"); {
+        return (Math.floor(Math.random() * (1000 - 500 + 1) ) + 500)*0.925;
+      }
+ }
+
+ Employee.prototype.render=function(){
+ 
+  document.write("<center><div>The full name is " +employee1.fullName+" and the salary is " +employee1.salary+"</div>");
+  
+  document.write("<div>The full name is " +employee2.fullName+" and the salary is " +employee2.salary+"</div>");
+  document.write("<div>The full name is " +employee3.fullName+" and the salary is " +employee3.salary+"</div>");
+  document.write("<div>The full name is " +employee4.fullName+" and the salary is " +employee4.salary+"</div>");
+  document.write("<div>The full name is " +employee5.fullName+" and the salary is " +employee5.salary+"</div>");
+  document.write("<div>The full name is " +employee6.fullName+" and the salary is " +employee6.salary+"</div>");
+  document.write("<div>The full name is " +employee7.fullName+" and the salary is " +employee7.salary+"</div></center>");
+   }
+
+employee1.salary=employee1.salaryy();//
+employee2.salary=employee2.salaryy();
+employee3.salary=employee3.salaryy();
+employee4.salary=employee4.salaryy();
+employee5.salary=employee5.salaryy();
+employee6.salary=employee6.salaryy();
+employee7.salary=employee7.salaryy();
 
 
 
-// employee1.salary=employee1.salaryy();//
-// employee2.salary=employee2.salaryy();
-// employee3.salary=employee3.salaryy();
-// employee4.salary=employee4.salaryy();
-// employee5.salary=employee5.salaryy();
-// employee6.salary=employee6.salaryy();
-// employee7.salary=employee7.salaryy();
-
-
-
-//  console.table(employee6);
-//  employee1.render();
+ console.table(employee6);
+ employee1.render();
 
 Employee.prototype.render=function () {
 

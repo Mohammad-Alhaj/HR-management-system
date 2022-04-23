@@ -23,29 +23,29 @@ color: rgb(235, 19, 19);
 
 
 
+
+
+
+.copy{
+    color: rgb(2, 12, 16);
+position: relative;
+top: 17rem;
+text-align: right;
+
+
+}
 .social{
     
     background-color:#827397  ;
 text-align: center;
 padding-top: 25px;
 padding-bottom: 25px;
-
-
+position:relative;
+top:15.5rem;
 
 
 }
 
-
-
-.copy{
-    color: rgb(209, 217, 225);
-
-text-align: right;
-position: relative;
-top: 75px;
-right: 10px;
-
-}
 .Image{
 
 
