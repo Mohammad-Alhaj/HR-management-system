@@ -46,14 +46,14 @@ info.push(this);
 
  Employee.prototype.render=function(){
  
-  document.write("<center><div>The full name is " +employee1.fullName+" and the salary is " +employee1.salary+"</div>");
+  // document.write("<center><div>The full name is " +employee1.fullName+" and the salary is " +employee1.salary+"</div>");
   
-  document.write("<div>The full name is " +employee2.fullName+" and the salary is " +employee2.salary+"</div>");
-  document.write("<div>The full name is " +employee3.fullName+" and the salary is " +employee3.salary+"</div>");
-  document.write("<div>The full name is " +employee4.fullName+" and the salary is " +employee4.salary+"</div>");
-  document.write("<div>The full name is " +employee5.fullName+" and the salary is " +employee5.salary+"</div>");
-  document.write("<div>The full name is " +employee6.fullName+" and the salary is " +employee6.salary+"</div>");
-  document.write("<div>The full name is " +employee7.fullName+" and the salary is " +employee7.salary+"</div></center>");
+  // document.write("<div>The full name is " +employee2.fullName+" and the salary is " +employee2.salary+"</div>");
+  // document.write("<div>The full name is " +employee3.fullName+" and the salary is " +employee3.salary+"</div>");
+  // document.write("<div>The full name is " +employee4.fullName+" and the salary is " +employee4.salary+"</div>");
+  // document.write("<div>The full name is " +employee5.fullName+" and the salary is " +employee5.salary+"</div>");
+  // document.write("<div>The full name is " +employee6.fullName+" and the salary is " +employee6.salary+"</div>");
+  // document.write("<div>The full name is " +employee7.fullName+" and the salary is " +employee7.salary+"</div></center>");
    }
 
 employee1.salary=employee1.salaryy();//
@@ -98,10 +98,13 @@ image.style.width="160px";
 
 
 console.log(sectionEl);
-
-for (let i = 0; i < info.length; i++) {
-  info[i].render();
+function renderAll()
+{
+  for (let i = 0; i < info.length; i++) {
+    info[i].render();
+  }
 }
+
 
  
 
@@ -123,7 +126,30 @@ let image=event.target.Image.value;
 let newemployee= new Employee(Math.floor(1000 + Math.random() * 9000),fullName,department,level,"photo/new employee.jpg");
 
 newemployee.render();
-    console.log(newemployee);
-
+    //console.log(newemployee);
+saveData(info);
 
     };
+function saveData(data) {
+
+  let stringifyData=JSON.stringify(data)
+localStorage.setItem("employees",stringifyData)
+  
+}
+function getData() {
+ 
+  let getData1=localStorage.getItem("employees")
+ // console.log(typeof getData1 );
+ let arrayData=JSON.parse(getData1)
+
+if (arrayData!=null) {
+
+  for (let index = 0; index < arrayData.length; index++) {
+    new Employee(arrayData[index].employeeId,arrayData[index].fullName,arrayData[index].department,arrayData[index].level,arrayData[index].imageUlr)
+    
+  }
+}
+ 
+renderAll()
+}
+getData();
